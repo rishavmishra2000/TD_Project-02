@@ -1,0 +1,48 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 110%;
+  background-color: #eee;
+}
+
+.wrapper {
+  background: linear-gradient(to right, #ccc, #777);
+  width: 550px;
+  margin: 0 auto;
+  padding: 80px;
+  z-index: 10;
+  border-radius: 10px;
+}
+
+p {
+  text-align: center;
+  font-family: cursive;
+  font-weight: bold;
+  height: 10px;
+}
+
+label {
+  width: 200px;
+  float: left;
+  position: relative;
+  margin-top: 16px;
+}
+
+input {
+  margin-top: 4px;
+  width: 320px;
+  font-size: 18px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 5px 8px 5px;
+}
+
+.button:hover {
+  background-color: #436bba;
+  color: white;
+}
+
+.button {
+  position: relative;
+  width: 150px;
+  margin-left: 200px;
+}
