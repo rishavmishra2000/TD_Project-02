@@ -1,20 +1,3 @@
-function isNumberKey(evt) {
-  var charCode = evt.which ? evt.which : evt.keyCode;
-  if (
-    charCode == 8 ||
-    (charCode >= 37 && charCode <= 40) ||
-    (charCode >= 48 && charCode <= 57)
-  ) {
-    return true;
-  }
-  return false;
-}
-
-function removeNonNumeric(evt) {
-  var input = document.getElementById("numberInput");
-  input.value = input.value.replace(/[^0-9]/g, "");
-}
-
 emailValidator = () => {
   var email = $("#email").val();
   var regex = /^[a-zA-Z0-9]+([._-][a-zA-Z]+)*@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
