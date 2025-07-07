@@ -39,7 +39,7 @@ $("#submit").click(() => {
   } else if (password == "" && cnf_password == "") {
     error_message += "Please enter password.";
   } else if (password.length < 10 || cnf_password.length < 10) {
-    error_message += "Password & Confirm password length must be more than 10.";
+    error_message += "Password & Confirm password length must be 10 or more.";
   } else if (passwordValidator(password)) {
     if (password == cnf_password) {
       success_message += "User Registered Successfully.";
