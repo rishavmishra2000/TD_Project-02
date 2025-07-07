@@ -1,4 +1,4 @@
-isNumberKey = (evt) => {
+function isNumberKey(evt) {
   var charCode = evt.which ? evt.which : evt.keyCode;
   if (
     charCode == 8 ||
@@ -8,12 +8,12 @@ isNumberKey = (evt) => {
     return true;
   }
   return false;
-};
+}
 
-removeNonNumeric = (evt) => {
+function removeNonNumeric(evt) {
   var input = document.getElementById("numberInput");
   input.value = input.value.replace(/[^0-9]/g, "");
-};
+}
 
 emailValidator = () => {
   var email = $("#email").val();
