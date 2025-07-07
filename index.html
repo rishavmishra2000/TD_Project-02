@@ -23,12 +23,12 @@
       <div class="form-element">
         <label for="mobno">Mobile No.</label>
         <input
-          type="text"
           id="mobno"
+          type="tel"
           maxlength="10"
-          placeholder="Enter mobile number."
-          onkeydown="return isNumberKey(event)"
-          onkeyup="removeNonNumeric(event)"
+          pattern="[0-9]*"
+          oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+          placeholder="Enter mobile number"
         />
       </div>
       <div class="form-element">
@@ -57,23 +57,5 @@
       </div>
     </div>
   </body>
-  <script>
-    function isNumberKey(evt) {
-    var charCode = evt.which ? evt.which : evt.keyCode;
-    if (
-      charCode == 8 ||
-        (charCode >= 37 && charCode <= 40) ||
-        (charCode >= 48 && charCode <= 57)
-      ) {
-        return true;
-      }
-      return false;
-    }
-    
-    function removeNonNumeric(evt) {
-      var input = document.getElementById("numberInput");
-      input.value = input.value.replace(/[^0-9]/g, "");
-    }
-  </script>
   <script src="script.js"></script>
 </html>
