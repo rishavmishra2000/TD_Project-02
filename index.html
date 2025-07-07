@@ -23,11 +23,12 @@
       <div class="form-element">
         <label for="mobno">Mobile No.</label>
         <input
-          type="number"
+          type="tel"
           id="mobno"
           maxlength="10"
-          pattern="\d{10}"
           placeholder="Enter mobile number."
+          onkeydown="return isNumberKey(event)"
+          onkeyup="removeNonNumeric(event)"
         />
       </div>
       <div class="form-element">
