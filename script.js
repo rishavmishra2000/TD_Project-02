@@ -1,3 +1,20 @@
+isNumberKey = (evt) => {
+  var charCode = evt.which ? evt.which : evt.keyCode;
+  if (
+    charCode == 8 ||
+    (charCode >= 37 && charCode <= 40) ||
+    (charCode >= 48 && charCode <= 57)
+  ) {
+    return true;
+  }
+  return false;
+};
+
+removeNonNumeric = (evt) => {
+  var input = document.getElementById("numberInput");
+  input.value = input.value.replace(/[^0-9]/g, "");
+};
+
 emailValidator = () => {
   var email = $("#email").val();
   var regex = /^[a-zA-Z0-9]+([._-][a-zA-Z]+)*@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
@@ -37,18 +54,18 @@ $("#submit").click(() => {
     error_message += "Mobile number must be of 10 digit.";
     $("#error_message").html(error_message);
   } else if (password == "" && cnf_password == "") {
-    error_message += "please enter password.";
-  } else {
-    if (passwordValidator(password)) {
-      if (cnf_password == password) {
-        success_message += "User Registered Successfully.";
-      } else {
-        error_message += "password and confirm password doesn't matched.";
-      }
+    error_message += "Please enter password.";
+  } else if (password.length < 10 || cnf_password.length < 10) {
+    error_message += "Password & Confirm password length must be more than 10.";
+  } else if (passwordValidator(password)) {
+    if (password == cnf_password) {
+      success_message += "User Registered Successfully.";
     } else {
-      error_message +=
-        "Password atleast contain one lowercase, one uppercase, one number and one special character (@,*,?).";
+      error_message += "password and confirm password doesn't matched.";
     }
+  } else {
+    error_message +=
+      "Password atleast contain one lowercase, one uppercase, one number and one special character (@,*,?).";
   }
 
   if (error_message != "") {
